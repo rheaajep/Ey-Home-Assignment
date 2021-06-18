@@ -1,0 +1,15 @@
+<div class="main-container">
+    <div class="title">
+        User Information
+    </div>
+    <div *ngFor="let u of usersData;" class="user-card-container">
+        <div class="user-card">
+            <app-user-card [userData]="u"></app-user-card>
+        </div>
+        <div class="buttons-container">
+            <div class="view">
+                <app-view-button [routerLink]="['/Users',u.id]"></app-view-button>
+            </div>
+        </div>
+    </div>
+</div>

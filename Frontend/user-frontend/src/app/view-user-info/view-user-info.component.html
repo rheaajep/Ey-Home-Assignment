@@ -1,0 +1,49 @@
+<div class="main-container">
+    <div class="back-button" [routerLink]="['/Users']">
+        Back
+    </div>
+    <div class="button-container">
+        <app-edit-button (click)="showEdit()"></app-edit-button>
+    </div>
+    <div class="title">
+        User Details
+    </div>
+    <div class="user-info">
+        <p>
+            {{singleUserdata.firstname}} {{singleUserdata.middlename}} {{singleUserdata.lastname}}
+        </p>
+        <p>
+            {{singleUserdata.email}} {{singleUserdata.phoneNos}}
+        </p>
+        <p>
+            {{singleUserdata.location}}
+        </p>
+        <p>
+            {{singleUserdata.address}}
+        </p>
+        <p>
+            {{singleUserdata.linkedIn}}
+        </p>
+        </div>
+    <div class="edit-info" *ngIf="showEditInfo">
+        <div class="details">
+            <input id="firstname" name="firstname" type="text" value={{singleUserdata.firstname}}>
+            <input id="middlename" name="middlename" type="text" value={{singleUserdata.middlename}}>
+            <input id="lastname" name="lastname" type="text" value="{{singleUserdata.lastname">
+            <input id="email" name="email" type="text" value={{singleUserdata.email}}>
+            <input id="phoennos", name="phonenos", type="text", value={{singleUserdata.phoneNos}}>
+            <input id="location" name="location" type="text", value="{{singleUserdata.location">
+            <input id="address" name="address" type="text" value="{{singleUserdata.address">
+            <input id="linkedin" name="linkedin", type="text" value={{singleUserdata.linkedIn}}>
+        </div>
+        <div class="submit-cancel">
+            <div class="submit-button buttons" (click)="onSubmit()">
+                Submit
+            </div>
+            <div class="cancel-button buttons" (click)="onCancel()">
+                Cancel
+            </div>
+        </div>
+    </div>
+</div>
+
