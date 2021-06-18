@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.AccessingUserData.User;
 import com.example.AccessingUserData.EntityNotFoundException;
+import com.example.AccessingUserData.UserRepository;
 import java.util.List;
 
 
@@ -17,11 +18,11 @@ public class MainService{
     }
 
     public Iterable<User> findAll(){
-        return repo.findAll();
+        return repo.findUsers();
     }
 
-    /*public User saveUser(User user){
+    public User saveUser(User user){
         return repo.save(user);
-    }*/
+    }
 
 }

@@ -27,6 +27,14 @@ export class DisplayContainerComponent implements OnInit {
     this.service.getAllUsers().subscribe((result)=>{});
   }
 
+  openView( userId : number){
+
+  }
+
+  openEdit (userId:number){
+    
+  }
+
 }
 
 function handleUsers(response : any) : [User[]]{
