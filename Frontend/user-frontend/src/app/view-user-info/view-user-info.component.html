@@ -28,13 +28,22 @@
     <div class="edit-info" *ngIf="showEditInfo">
         <div class="details">
             <input id="firstname" name="firstname" type="text" value={{singleUserdata.firstname}}>
+            <span *ngIf="!firstname.value" style="color: red;">Field is Empty</span>
             <input id="middlename" name="middlename" type="text" value={{singleUserdata.middlename}}>
+            <span *ngIf="!middlename.value" style="color: red;">Field is Empty</span>
             <input id="lastname" name="lastname" type="text" value="{{singleUserdata.lastname">
-            <input id="email" name="email" type="text" value={{singleUserdata.email}}>
+            <span *ngIf="!lastname.value" style="color: red;">Field is Empty</span>
+            <input id="email" name="email" type="email" [email]="true" value={{singleUserdata.email}}>
+            <span *ngIf="!email.value" style="color: red;">Field is Empty</span>
+            <span *ngIf="email.errors?.email" style="color: red;">Not a valid email id</span>
             <input id="phoennos", name="phonenos", type="text", value={{singleUserdata.phoneNos}}>
+            <span *ngIf="!phoennos.value" style="color: red;">Field is Empty</span>
             <input id="location" name="location" type="text", value="{{singleUserdata.location">
+            <span *ngIf="!location.value" style="color: red;">Field is Empty</span>
             <input id="address" name="address" type="text" value="{{singleUserdata.address">
+            <span *ngIf="!address.value" style="color: red;">Field is Empty</span>
             <input id="linkedin" name="linkedin", type="text" value={{singleUserdata.linkedIn}}>
+            <span *ngIf="!linkedin.value" style="color: red;">Field is Empty</span>
         </div>
         <div class="submit-cancel">
             <div class="submit-button buttons" (click)="onSubmit()">

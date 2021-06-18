@@ -50,6 +50,7 @@ export class ViewUserInfoComponent implements OnInit {
     this.singleUserdata=data;
   }
 
+
   onSubmit(){
      var editedUser : SingleUser={
        id : this.userId,
