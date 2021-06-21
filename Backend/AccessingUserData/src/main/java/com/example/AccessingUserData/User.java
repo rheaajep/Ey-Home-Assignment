@@ -35,10 +35,8 @@ public class User {
     @Column(name="LINKEDIN")
     private String linkedIn;
 
-    @Column(name="BIRTHDATE")
-    private Date birthdate;
 
-    public User(String firstName, String middleName, String lastName, String email, String phonenos, String location, String address, String linkedin, Date birthdate){
+    public void User(String firstName, String middleName, String lastName, String email, String phonenos, String location, String address, String linkedin){
         this.firstname=firstName;
         this.middlename=middleName;
         this.lastname=lastName;
@@ -47,7 +45,6 @@ public class User {
         this.location=location;
         this.address=address;
         this.linkedIn=linkedin;
-        this.birthdate=birthdate;
 
     }
 
@@ -55,39 +52,73 @@ public class User {
         return ID;
     }
 
+    public void setId(Integer id){
+        this.ID=id;
+    }
+
+
     public String getFirstName(){
         return firstname;
+    }
+
+    public void setFirstName(String name){
+        this.firstname=name;
     }
 
     public String getMiddleName(){
         return middlename;
     }
 
+    public void setMiddleName(String name){
+        this.middlename=name;
+    }
+
     public String getLastName(){
         return lastname;
+    }
+
+    public void setLastName(String name){
+        this.lastname=name;
     }
 
     public String getEmail(){
         return email;
     }
 
+    public void setEmail(String email){
+        this.email=email;
+    }
+
     public String getPhoneNos(){
         return phoneNos;
+    }
+
+    public void setPhoneNos(String nos){
+        this.phoneNos=nos;
     }
 
     public String getLocation(){
         return location;
     }
 
+    public void setLocation(String location){
+        this.location=location;
+    }
+
     public String getAddress(){
         return address;
+    }
+
+    public void setAddress(String address){
+        this.address=address;
     }
 
     public String getLinkedin(){
         return linkedIn;
     }
 
-    public Date getBirthdate(){
-        return birthdate;
+    public void setLinkedin(String link){
+        this.linkedIn=link;
     }
+
 }

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SingleUser } from '../Interfaces/single-user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private userUrl='/api/Users';
+  private userUrl='http://localhost:8080/Users';
 
 
   constructor(private http: HttpClient) { }
@@ -19,7 +20,7 @@ export class UserService {
   }
 
   //get a single user info
-  getSingleUser(id : number){
+  getSingleUser(id : number): Observable<any>{
     const url=`${this.userUrl}?id=${id}`;
     return this.http.get(url);
   }

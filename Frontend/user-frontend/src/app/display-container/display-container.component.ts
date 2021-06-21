@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../Interfaces/user';
+import {users} from '../mock-data/mock-user';
 import { UserService } from '../Services/user.service';
 import { map } from 'rxjs/operators';
 
@@ -11,6 +12,7 @@ import { map } from 'rxjs/operators';
 export class DisplayContainerComponent implements OnInit {
 
   usersData: User[]=[];
+
 
   constructor(private service:UserService) { }
 
@@ -24,16 +26,9 @@ export class DisplayContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllUsers().subscribe((result)=>{});
+    this.getAllUsers().subscribe((result)=>{},(error)=>{alert("Server Error")});
   }
 
-  openView( userId : number){
-
-  }
-
-  openEdit (userId:number){
-    
-  }
 
 }
 
@@ -44,10 +39,10 @@ function handleUsers(response : any) : [User[]]{
   for(let index in res){
     const tmp=res[index];
     tmpList.push({
-      id : tmp.ID,
-      firstName: tmp.firstname,
-      lastName : tmp.lastname,
-      email: tmp.email,
+      id : tmp[0],
+      firstName: tmp[1],
+      lastName : tmp[2],
+      email: tmp[3],
     })
   }
 

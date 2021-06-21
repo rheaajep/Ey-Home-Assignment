@@ -1,57 +1,50 @@
 <div class="main-container">
-    <div class="back-button" [routerLink]="['/Users']">
+    <div class="back-button" routerLink="">
         Back
-    </div>
-    <div class="button-container">
-        <app-edit-button (click)="showEdit()"></app-edit-button>
     </div>
     <div class="title">
         User Details
     </div>
     <div class="user-info">
         <p>
-            {{singleUserdata.firstname}} {{singleUserdata.middlename}} {{singleUserdata.lastname}}
+            <span class="heading">Full Name: </span>{{singleUserdata.firstname}} {{singleUserdata.middlename}} {{singleUserdata.lastname}}
         </p>
         <p>
-            {{singleUserdata.email}} {{singleUserdata.phoneNos}}
+            <span class="heading">Email: </span>{{singleUserdata.email}}</p>
+        <p><span class="heading">Phone Nos: </span>{{singleUserdata.phoneNos}}</p>
+        <p>
+            <span class="heading">Location: </span>{{singleUserdata.location}}
         </p>
         <p>
-            {{singleUserdata.location}}
+            <span class="heading">Address: </span>{{singleUserdata.address}}
         </p>
         <p>
-            {{singleUserdata.address}}
+            <span class="heading">LinkedIn: </span>{{singleUserdata.linkedIn}}
         </p>
-        <p>
-            {{singleUserdata.linkedIn}}
-        </p>
+    </div>
+    <div class="button-container">
+        <app-edit-button (click)="showEdit()"></app-edit-button>
+    </div>
+</div>
+<div class="edit-container">
+    <div class="title">
+        Edit Details
+    </div>
+    <div class="edit-info">
+        <div>
+            <input id="firstname" name="firstname" type="text" value="{{singleUserdata.firstname}}">
         </div>
-    <div class="edit-info" *ngIf="showEditInfo">
-        <div class="details">
-            <input id="firstname" name="firstname" type="text" value={{singleUserdata.firstname}}>
-            <span *ngIf="!firstname.value" style="color: red;">Field is Empty</span>
-            <input id="middlename" name="middlename" type="text" value={{singleUserdata.middlename}}>
-            <span *ngIf="!middlename.value" style="color: red;">Field is Empty</span>
-            <input id="lastname" name="lastname" type="text" value="{{singleUserdata.lastname">
-            <span *ngIf="!lastname.value" style="color: red;">Field is Empty</span>
-            <input id="email" name="email" type="email" [email]="true" value={{singleUserdata.email}}>
-            <span *ngIf="!email.value" style="color: red;">Field is Empty</span>
-            <span *ngIf="email.errors?.email" style="color: red;">Not a valid email id</span>
-            <input id="phoennos", name="phonenos", type="text", value={{singleUserdata.phoneNos}}>
-            <span *ngIf="!phoennos.value" style="color: red;">Field is Empty</span>
-            <input id="location" name="location" type="text", value="{{singleUserdata.location">
-            <span *ngIf="!location.value" style="color: red;">Field is Empty</span>
-            <input id="address" name="address" type="text" value="{{singleUserdata.address">
-            <span *ngIf="!address.value" style="color: red;">Field is Empty</span>
-            <input id="linkedin" name="linkedin", type="text" value={{singleUserdata.linkedIn}}>
-            <span *ngIf="!linkedin.value" style="color: red;">Field is Empty</span>
+        <div>
+            <input id="middlename" name="middlename" type="text" value="{{singleUserdata.middlename}}">
         </div>
-        <div class="submit-cancel">
-            <div class="submit-button buttons" (click)="onSubmit()">
-                Submit
-            </div>
-            <div class="cancel-button buttons" (click)="onCancel()">
-                Cancel
-            </div>
+        <div>
+            <input id="lastname" name="lastname" type="text" value="{{singleUserdata.lastname}}">
+        </div>
+        <div>
+            <input id="email" name="email" type="text" value="{{singleUserdata.email}}">
+        </div>
+        <div>
+            <input id="phonenos" name="phonenos" type="text" value="{{singleUserdata.phoneNos}}">
         </div>
     </div>
 </div>

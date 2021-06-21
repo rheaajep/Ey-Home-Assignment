@@ -8,7 +8,12 @@ import {User} from '../Interfaces/user';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() userData?: User;
+  @Input() userData: User={
+    id : -1,
+    firstName : "",
+    lastName : "",
+    email : ""
+  };
 
   constructor() { }
 

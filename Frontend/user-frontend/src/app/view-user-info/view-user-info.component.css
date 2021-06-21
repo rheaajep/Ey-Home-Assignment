@@ -1,19 +1,37 @@
-.back-button{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+.main-container{
+    margin-top: 10%;
+    margin-left: 10%;
 }
 
-.edit-button{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.edit-container{
+    margin-top: 10%;
+    margin-left: 10%;
 }
+
+.back-button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.button-container{
+    width: fit-content;
+    margin-top: 25px;
+}
+
 
 .title{
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: bold;
+    width: fit-content;
+    margin-top: 40px;
 }
 
+.heading{
+    font-weight: bold;
+}
 .user-info{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;

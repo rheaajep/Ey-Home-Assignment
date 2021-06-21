@@ -11,7 +11,15 @@ import { SingleUser } from '../Interfaces/single-user';
 })
 export class ViewUserInfoComponent implements OnInit {
   
-  singleUserdata ?: SingleUser;
+  singleUserdata : SingleUser={id : 4, 
+    firstname : "Charlie", 
+    middlename : "Mason", 
+    lastname : "Dyke", 
+    email : "charliemason@gmail.com", 
+    location : "Pittsburgh", 
+    address : "897 Centre Avenue, PA 15213", 
+    phoneNos : "412-983-0987", 
+    linkedIn : "/charliem"};
   userId : number=-1;
   constructor(private activate_route:ActivatedRoute, private service : UserService) { }
 
@@ -29,6 +37,7 @@ export class ViewUserInfoComponent implements OnInit {
 
   getLinkId(result : any){
     this.userId=result.get('id');
+    this.getUserDetails(this.userId).subscribe((result)=>{});
 
   }
 
@@ -72,14 +81,14 @@ export class ViewUserInfoComponent implements OnInit {
 function handleUser(response : any) : [SingleUser]{
   const res=JSON.parse(JSON.stringify(response));
   const tmp : SingleUser={ id : res.ID, 
-    firstname : res.firstname, 
-    middlename : res.middlename, 
-    lastname : res.lastname, 
+    firstname : res.firstName, 
+    middlename : res.middleName, 
+    lastname : res.lastName, 
     email : res.email, 
     phoneNos : res.phoneNos, 
     location : res.location, 
     address : res.address, 
-    linkedIn : res.linkedIn
+    linkedIn : res.linkedin
   }
 
   return [tmp];

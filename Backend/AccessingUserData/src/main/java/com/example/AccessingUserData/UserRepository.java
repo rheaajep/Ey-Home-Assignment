@@ -5,10 +5,14 @@ import com.example.AccessingUserData.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-public interface UserRepository extends CrudRepository<User,Serializable>{
+@Repository
+@CrossOrigin(origins="http://localhost:4200")
+public interface UserRepository extends CrudRepository<User,Integer>{
 
-    @Query("select u from User u where u.firstname=?1")
-    List<User> findUsers();
+    @Query("select ID, firstname, lastname, email from User")
+    Iterable<User> findUsers();
 }

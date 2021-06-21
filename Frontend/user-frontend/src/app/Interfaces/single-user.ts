@@ -8,4 +8,4 @@ export interface SingleUser {
     address : string, 
     phoneNos : string, 
     linkedIn : string
-}
+};
